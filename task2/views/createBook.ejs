@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Create Book</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron">
+            <form id="form" action="/books/submitbook" method="POST">
+                <div class="form-group">
+                    <label for="name">Book Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Book Name">
+                </div>
+                <div class="form-group">
+                    <label for="author">Date</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="author">Price</label>
+                    <input type="number" class="form-control" id="price">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author">
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" class="form-control" id="isbn">
+                </div>
+                <input type="submit" class="btn btn-primary" id="submitBook">
+            </form>
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $("#form").submit(function(event){
+            event.preventDefault();
+            var data = {};
+            data.name = document.getElementById("name").value;
+            data.date = document.getElementById("date").value;
+            data.price = document.getElementById("price").value;
+            data.author = document.getElementById("author").value;
+            data.ISBN = document.getElementById("isbn").value;
+            $.ajax({
+                url: '/books/submitbook',
+                type : 'POST',
+                data : data,
+                success : function(result) {
+                    window.location = "/";
+                },
+                error: function(xhr, resp, text) {
+                }
+            })
+        });
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
