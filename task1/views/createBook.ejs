@@ -44,19 +44,6 @@
 
     <script type="text/javascript">
 
-
-    // var name=$('#name').val(), date=$('#date').val();
-    // $('submitBook').bind('click', function() {
-    //     $.ajax('/books/submitbook', {
-    //     type: 'GET',
-    //     contentType: 'text/json',
-    //     data: JSON.stringify({name:name, date:date}),
-    //     complete: function() { /* Do something with the response. */ }
-    //     });
-    //     return false; // Prevent form submit.
-    // });
-
-        // click on button submit
         $("#form").submit(function(event){
             event.preventDefault();
             var data = {};
@@ -65,15 +52,11 @@
             data.price = document.getElementById("price").value;
             data.author = document.getElementById("author").value;
             data.ISBN = document.getElementById("isbn").value;
-            // send ajax
             $.ajax({
-                url: '/books/submitbook', // url where to submit the request
-                type : 'POST', // type of action POST || GET
-                // dataType : 'json/application', // data type
-                data : data, // post data || get data
+                url: '/books/submitbook',
+                type : 'POST',
+                data : data,
                 success : function(result) {
-                    // you can see the result from the console
-                    // tab of the developer tools
                     window.location = "/";
                 },
                 error: function(xhr, resp, text) {
