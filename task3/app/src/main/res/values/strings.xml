@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Firebase Authentication</string>
+    <string name="app_name">Github_Browser</string>
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
@@ -66,7 +66,7 @@
     <string name="facebook_title_text">Facebook Login</string>
 
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
-    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="emailpassword_title_text">Enter your Email and Password to create an account or login.</string>
 
     <string name="passwordless_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="passwordless_title_text">Passwordless Sign In</string>

@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/row_padding_vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/row_padding_vertical">
+    android:orientation="vertical">
+    <!-- A CardView that contains a TextView -->
+<android.support.v7.widget.CardView
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+android:id="@+id/card_view"
+android:layout_gravity="center"
+android:layout_width="match_parent"
+    android:layout_margin="15dp"
+    android:layout_height="match_parent"
+card_view:cardCornerRadius="8dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:gravity="center"
         android:layout_alignParentTop="true"
         android:textColor="@color/title"
         android:textSize="16dp"
@@ -22,6 +31,7 @@
     <RelativeLayout
         android:id="@+id/firstLayout"
         android:layout_width="match_parent"
+        android:padding="8dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_below="@id/title"
@@ -39,8 +49,9 @@
     <RelativeLayout
         android:id="@+id/secondLayout"
         android:layout_width="match_parent"
+        android:padding="8dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:layout_below="@id/firstLayout"
         android:orientation="horizontal">
         <TextView
@@ -56,9 +67,10 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/thirdLayout"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="90dp"
         android:layout_below="@id/secondLayout"
         android:orientation="horizontal">
         <TextView
@@ -75,15 +87,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="70dp"
         android:layout_below="@id/thirdLayout"
         android:orientation="horizontal">
         <Button
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1.0"
             android:id="@+id/githubLinkButton"
+            android:layout_marginTop="60dp"
             android:onClick="onClickMethod"
-            android:text="Open Repository"/>
-    </RelativeLayout>
+            android:text="Open Repository"
+            android:theme="@style/ThemeOverlay.MyDarkButton" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+</LinearLayout>
+

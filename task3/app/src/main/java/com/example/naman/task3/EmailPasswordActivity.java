@@ -91,8 +91,13 @@ public class EmailPasswordActivity extends AppCompatActivity implements
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
+
+                            if(mPasswordField.length() <6){
+                                Toast.makeText(EmailPasswordActivity.this, "Password should be greater than 5 characters.",Toast.LENGTH_SHORT).show();
+                            } else{
+                                Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
+                            }
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
