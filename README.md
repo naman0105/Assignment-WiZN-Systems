@@ -1,5 +1,7 @@
 # Assignment-WiZN-Systems
 
+This task was done for the wizn systems internship
+
 <h3>Task 1:</h3>
 
 -> open the task1 folder through terminal<br>
